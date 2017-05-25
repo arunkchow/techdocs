@@ -1,0 +1,24 @@
+Installing Graphics on Ubuntu 16.04
+
+Intel:
+- Visit the below URL and download the Intel Graphics Update Tool for Linux
+		https://01.org/linuxgraphics/downloads/intel-graphics-update-tool-linux-os-v2.0.2
+- Execute the GUI package and follow onscreen instructions to update intel drivers on Linux Machine
+- Reboot if you wanted to
+
+Nvidia:
+- sudo add-apt-repository ppa:graphics-drivers/ppa (Add Graphics Repos)
+- sudo apt-get update
+- sudo apt-get install nvidia-3xx -y (Go to nvidia.com to verify the latest version of the Linux Driver)
+- sudo apt-get install bumblebee bumblebee-nvidia nvidia-prime primus linux-headers-generic -y (Install all the supported and required packages)
+- sudo systemctl enable bumblebeed (Enable Optimus Tech which is bumblebee daemon)
+- Edit /etc/modules and add below two lines
+		i915
+		bbswitch
+- Edit /etc/bumblebee/bumblebee.conf and add the below line
+		Driver=nvidia
+- Select the desired Graphics Card
+		sudo prime-select intel
+			or
+		sudo prime-select nvidia
+- Reboot
