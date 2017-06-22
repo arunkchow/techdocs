@@ -22,3 +22,8 @@ Nvidia:
 			or
 		sudo prime-select nvidia
 - Reboot
+
+
+gsettings set org.gnome.desktop.interface text-scaling-factor 1
+gsettings set org.gnome.desktop.interface scaling-factor 2
+gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gdk/WindowScalingFactor': <2>}"
